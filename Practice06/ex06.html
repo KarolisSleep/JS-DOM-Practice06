@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>3 - 6 Fono paveikslėlis</title>
+    <style>
+        /* fun */
+        body {
+            background-color: #334;
+            color: #3d3;
+        }
+
+        /* Ex-06 */
+        .container {
+            margin: 2% auto;
+        }
+
+        .img1 {
+            background: url('https://imatch.lt/app/uploads/2019/01/27864935448_dc0d5b5568_o-743x463-c-default.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .img2 {
+            background: url('https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .img3 {
+            background: url('https://services.meteored.com/img/article/when-is-the-best-time-to-see-autumn-leaves-in-the-uk-372761-1_1280.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .img4 {
+            background: url('https://loveincorporated.blob.core.windows.net/contentimages/gallery/6a985aaa-8a95-4382-97a9-91cdf96f43d3-Moraine_Lake_Dennis_Frates_Alamy_Stock_Photo.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div onmouseover="hoveredOverDiv(this)" onmouseout="hoveredOffDiv(this)" class="container">
+        <div class="form-group">
+            <label for="id_of_select">Pasirinkite kokio fono norėtumėte</label>
+            <select class="form-control" id="id_of_select">
+                <option value="0" selected disabled>--Pasirinkite--</option>
+                <option value="1">Pavasaris</option>
+                <option value="2">Vasara</option>
+                <option value="3">Ruduo</option>
+                <option value="4">Žiema</option>
+            </select>
+        </div>
+        <button id="btn" class="btn btn-success">Rodyti</button>
+    </div>
+    </div>
+
+    <script>
+        /* 
+        let select = document.getElementById('id_of_select');
+        select.addEventListener('click', () => {
+            
+            let body = document.querySelector('body');
+            select.value == 1 ? body.style.backgroundColor = "#f00" : false;
+            select.value == 2 ? body.style.backgroundColor = "#00f" : false;
+            select.value == 3 ? body.style.backgroundColor = "#0f0" : false;
+            select.value == 4 ? body.style.backgroundColor = "#f0f" : false;
+        }); */
+
+        /* Ex-06 */
+        // Assigning variables
+        let body = document.querySelector('body');
+        let select = document.getElementById('id_of_select');
+        let btn = document.getElementById('btn');
+
+        // Action
+        btn.addEventListener('click', () => {
+            select.value == 1 ? body.className = ('img1') : false;
+            select.value == 2 ? body.className = ('img2') : false;
+            select.value == 3 ? body.className = ('img3') : false;
+            select.value == 4 ? body.className = ('img4') : false;
+        });
+
+        /* pZz
+        P: White screen flash, delayed image loading.
+        S: All images load in behind a white screen, 
+        on click the images z-index changes */
+    </script>
+
+
+</body>
+
+</html>
